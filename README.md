@@ -1,0 +1,4 @@
+CordovaAppITS
+=============
+
+applicazione 
