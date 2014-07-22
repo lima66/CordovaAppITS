@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/Site.css" rel="stylesheet" />
+    <title>index</title>
+</head>
+<body>
+    <div id="menubar"></div>
+    <!--FineMenu-->
+    <div class="container bodyContainer">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="hidden-xs">
+                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <img class="img-responsive" src="images/img/slide-1.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="images/img/slide-2.jpg" alt="">
+                            </div>
+                            <div class="item">
+                                <img class="img-responsive" src="images/img/slide-3.jpg" alt="">
+                            </div>
+                        </div>
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2 class="pageTitle">Last News</h2>
+                        <ul id="lastNews" style="padding-bottom: 10px; border-bottom: 2px dotted black; margin-bottom: 20px;">
+                            <!--@*ultime cinque news inserite dinamicamnte*@-->
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h2 class="pageTitle">Next Events</h2>
+                        <ul id="nextEvents" style="padding-bottom: 10px; border-bottom: 2px dotted black; margin-bottom: 20px;">
+                            <!--@*ultimi cinque eventi inserite dinamicamnte*@-->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <!--@*VISUALIZZA QUADRO ORE*@-->
+                <a href="Quadroaule.html">
+                    <div style="width:100%;                    
+                    height:180px;
+                    border-bottom-left-radius:10px;
+                    border-top-right-radius:10px;
+                    border:2px solid #428bca;
+                    margin-bottom:20px;">
+                        <div style="border-bottom: 2px solid #428bca; color: #428bca;">
+                            <h4 style="margin-left:10px;"><span class="glyphicon glyphicon-time"></span> Visualizza il quadro ore</h4>
+                        </div>
+                        <div id="orario">
+                            <img src="images/101orario-lezioni.jpg" style="height:108px; width:100%;max-width:300px; display: block;margin-left: auto;margin-right: auto;" />
+                        </div>
+                    </div>
+                </a>
+                <!--LOGIN FORM-->
+                <div class="panel panel-primary" style="display:none;">
+                    <div class="panel-heading"><span class="glyphicon glyphicon-log-in"> </span> Login</div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <label><a href="Registrati.html">Registrati</a></label>
+                            <br />
+                            <label><a href="PasswordRecovery.html">Password Dimenticata</a></label>
+                            <br />
+                            <div class="btn btn-default">Login</div>
+                        </form>
+                    </div>
+                </div>
+                <!--NEWSLETTER-->
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><span class="glyphicon glyphicon-envelope"></span> Iscriviti alla newsletter</div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="newsletterInputEmail" placeholder="Enter email">
+                            </div>
+                            <button class="btn btn-default" id="submitNewsletterEmail">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div class="modal-footer">
+        <div class="container">
+            <div class="col-xs-4"><p class="home testo">Home</p></div>
+            <div class="col-xs-4"><p id="contatti" class="testo">Contatti</p></div>
+            <div class="col-xs-4"><p class="channelYoutube testo">Video</p></div>
+        </div>
+    </div>
+    <!--Javscript-->
+    <script type="text/javascript" src="cordova.js"></script> 
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>    
+    <script type="text/javascript" src="js/menu.js"></script>  
+    <script type="text/javascript" src="js/index.js"></script>  
+    <script type="text/javascript" src="js/homepage.js"></script>    
+    <script type="text/javascript" src="js/jquery.signalR-2.0.3.min.js"></script>
+    <script type="text/javascript" src="http://192.168.102.2/signalR/hubs"></script>       
+</body>
+</html>

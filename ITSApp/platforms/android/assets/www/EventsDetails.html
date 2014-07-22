@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/Site.css" rel="stylesheet" />
+    <title>Events Details</title>
+</head>
+<body>
+    <div id="menubar"></div>
+    <!--FineMenu-->
+    <div class="container bodyContainer">
+        <div class="row">
+            <div class="col-md-12"><h1 id="Titolo" style="text-align:center;"></h1></div>
+        </div>
+        <div class="row">      
+            <div class="col-xs-4" id="Foto"><img src="" id="imgFoto"/></div>     
+            <div class="col-xs-6"><p id="Testo"></p></div>
+        </div>
+    </div>
+    <!--Footer-->
+    <div class="modal-footer">
+        <div class="container">
+            <div class="col-xs-4"><p class="home testo">Home</p></div>
+            <div class="col-xs-4"><p id="contatti" class="testo">Contatti</p></div>
+            <div class="col-xs-4"><p class="channelYoutube testo">Video</p></div>
+        </div>
+    </div>
+    <!--Javscript-->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/eventsDetails.js"></script>
+    <script type="text/javascript" src="js/jquery.signalR-2.0.3.min.js"></script>
+    <script type="text/javascript" src="http://192.168.102.2/signalR/hubs"></script>
+</body>
+</html>
+

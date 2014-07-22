@@ -1,0 +1,40 @@
+﻿.col-md-3>img{
+    margin-top:15%;
+}
+#img-footer{
+    margin-top:10%;
+    margin-left:15%;
+}
+#descrizione{
+    margin-top:2%;
+}
+hr{
+    display:none;
+}
+.img-Festa{
+    display:none;
+}
+@media screen and (max-width:991px) {
+    hr{
+        display:block;
+    }
+    img{
+        margin-left:10%;
+        margin-top:10% ;
+        width:80%;
+        
+    }
+    .img-Festa{
+    display:block;
+    max-width:300px;
+}
+    #img-footer{
+        width:100%;
+        margin-left:0%;
+        max-width:100%;
+        margin-bottom:5%;
+    }
+    .img-responsive{
+        max-width:270px;
+    }
+}
