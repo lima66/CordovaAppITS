@@ -51,6 +51,7 @@ C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\ant-build\cl
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\ant-build\classes\org\apache\cordova\inappbrowser\InAppChromeClient.class \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager$1.class \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\ant-build\classes\org\apache\cordova\networkinformation\NetworkManager.class \
+C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\ant-build\classes\org\apache\cordova\plugin\powermanagement\PowerManagement.class \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\ant-build\classes\org\apache\cordova\vibration\Vibration.class \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\ant-build\dexedLibs\classes-82aed83ef5d1f60196be9847ea97f37f.jar \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\ant-build\dexedLibs\android-support-v4-201b9fa3d71c0e25bd30f2a524da46d5.jar \

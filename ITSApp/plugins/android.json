@@ -73,6 +73,10 @@
                         {
                             "xml": "<uses-permission android:name=\"android.permission.VIBRATE\" />",
                             "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WAKE_LOCK\" />",
+                            "count": 1
                         }
                     ],
                     "/*": [
@@ -108,6 +112,9 @@
             "PACKAGE_NAME": "com.its.ITSApp"
         },
         "com.ohh2ahh.plugins.appavailability": {
+            "PACKAGE_NAME": "com.its.ITSApp"
+        },
+        "org.apache.cordova.plugin.power-management": {
             "PACKAGE_NAME": "com.its.ITSApp"
         }
     },

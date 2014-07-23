@@ -1,5 +1,6 @@
 ﻿var myScroll;
 $(function () {
+    $("#divAltezza").height(480);
     myScroll = new IScroll('#wrapper',
     {
         zoom: true,
@@ -10,3 +11,4 @@ $(function () {
     });
 });
 document.addEventListener('DOMContentLoaded', loaded, false);
+

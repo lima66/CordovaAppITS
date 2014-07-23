@@ -70,6 +70,13 @@ module.exports = [
         "clobbers": [
             "appAvailability"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.plugin.power-management/www/PowerManagement.js",
+        "id": "org.apache.cordova.plugin.power-management.PowerManagement",
+        "clobbers": [
+            "window.powerManagement"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -82,7 +89,8 @@ module.exports.metadata =
     "org.apache.cordova.inappbrowser": "0.5.1-dev",
     "org.apache.cordova.network-information": "0.2.11-dev",
     "org.apache.cordova.vibration": "0.3.10-dev",
-    "com.ohh2ahh.plugins.appavailability": "0.3.0"
+    "com.ohh2ahh.plugins.appavailability": "0.3.0",
+    "org.apache.cordova.plugin.power-management": "0.1.0"
 }
 // BOTTOM OF METADATA
 });

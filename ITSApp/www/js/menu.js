@@ -61,7 +61,7 @@
                 //}
             });
             $('.cerca').on("click", function () {
-                var keyword = $("#searchInput").value;
+                var keyword = $("#searchInput").val();               
                 if (document.title != 'search') {
                     window.location = "Search.html?keyword=" + keyword;
                 } else {
@@ -69,8 +69,17 @@
                     popolaPaginaDettaglio(keyword);
                 }
             });
+            $(".bodyContainer").on("click", function () {
+                if ($('#globalizeItems').css('display') == 'block') {
+                    $("#globalizeItems").trigger('click');
+                    $(document).trigger('click');                    
+                }
+            });
             $("#globalizer").on("click", function () {              
-                $("#globalizeItems").toggle();
+                $("#globalizeItems").trigger('click');
+                if ($('#globalizeItems').css('display') == 'block') {                   
+                    $(document).trigger('click');
+                }
                 if ($(".glyphicon-globe").css("color") == "rgb(255, 0, 0)") {
                     $(".glyphicon-globe").css("color", "black");
                 }

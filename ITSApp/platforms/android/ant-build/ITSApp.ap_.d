@@ -180,6 +180,7 @@ C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\p
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.dialogs \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.inappbrowser \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.network-information \
+C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.plugin.power-management \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.vibration \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\com.ohh2ahh.plugins.appavailability\www \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\com.ohh2ahh.plugins.appavailability\www\AppAvailability.js \
@@ -198,6 +199,8 @@ C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\p
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\Connection.js \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\network.js \
+C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.plugin.power-management\www \
+C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.plugin.power-management\www\PowerManagement.js \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.vibration\www \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\assets\www\plugins\org.apache.cordova.vibration\www\vibration.js \
 C:\Users\ludovico\Desktop\CordovaAppFinale\ITSApp\platforms\android\ant-build\AndroidManifest.xml \

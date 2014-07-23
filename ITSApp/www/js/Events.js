@@ -33,7 +33,6 @@ $(function () {
             $('.newsCell').on('click', function () {
                 var obj = $(this);
                 var id = obj.attr('data-eventID');
-
                 window.location = "EventsDetails.html?eventID=" + id;
             })
 

@@ -1,7 +1,7 @@
 var msg;
+var wakelocked = false;
 $(document).ready(function () {
     document.addEventListener("deviceready", onDeviceReady.bind(this), false);
-
 });
     // Cordova is loaded and it is now safe to make calls Cordova methods
 function onDeviceReady() {  
@@ -24,24 +24,32 @@ function onPause() {
     msg = true;
     window.plugin.backgroundMode.enable();        
 }
-function backgroundMessage(message) {
+function backgroundMessage(id, tipo, titolo) {
     window.plugin.notification.local.add({
         title: "<< UNIPORDENONE >>",
-        message: message,
+        message: titolo,
         smallIcon: 'ic_dialog_email',
         icon: 'file://images/logo.png',
         sound: 'TYPE_ALARM',
         led: '0000FF' ,
         autoCancel: true
     });
+    window.plugin.notification.local.onclick = function () {        
+        if (tipo == 'Event') {
+            window.location = "EventsDetails.html?eventID=" + id;
+        }
+        if (tipo == 'News') {
+            window.location = "NewsDetails.html?newsID=" + id;
+        }       
+    };
 }
 function appendMessage(id, tipo, titolo) {   
-    var notification;  
+    var notification;
     if (tipo == 'Event') {
-        notification = '<a href="EventsDetails.html?eventID=' + id + '"><li>' + titolo + '</li></a>';       
+        notification = '<a href="EventsDetails.html?eventID=' + id + '"><li>' + titolo + '</li></a>';
     }
-    if (tipo == 'News'){
-        notification = '<a href="NewsDetails.html?newsID=' + id + '"><li>' + titolo + '</li></a>';       
+    if (tipo == 'News') {
+        notification = '<a href="NewsDetails.html?newsID=' + id + '"><li>' + titolo + '</li></a>';
     }
     var ul = document.getElementById("globalizeItems");
     var totalLi = ul.children.length;
@@ -69,17 +77,27 @@ function globalizerClick() {
 }
 //Si attiva quando premi il tasto back del telefono
 function onBackButton(e) {
-    if (document.title == 'index') {       
-            navigator.notification.confirm(
-            'Do you really want to exit?',
-             exitFromApp,
-            'Exit',
-            'Cancel,OK'
-             );
-        }
-        else {
-            navigator.app.backHistory();
-        }
+    if ($("#myModal").css('display') == 'block') {
+        $("#myModal").modal('hide');        
+        return;
+    }
+    if ($('#globalizeItems').css('display') == 'block') {       
+        $("#globalizeItems").trigger('click');
+        $(document).trigger('click');
+        return;
+    }
+    if (document.title == 'index') {
+        navigator.notification.confirm(
+        'Do you really want to exit?',
+         exitFromApp,
+        'Exit',
+        'Cancel,OK'
+         );
+    }
+    else {
+        navigator.app.backHistory();
+    }
+    
 }
 function AjaxCall(link,id,type) {
     $.ajax({
@@ -89,7 +107,7 @@ function AjaxCall(link,id,type) {
         datatype: 'json',
         success: function (notifica) {
             if (msg) {
-                backgroundMessage(notifica.Titolo);
+                backgroundMessage(id, type,notifica.Titolo);
             }
             appendMessage(id, type,notifica.Titolo);
         },
@@ -116,14 +134,15 @@ function getNewsRedisAndConnectToSignalR() {
         navigator.notification.beep(1);         
         globalizerClick();
         localStorage.setItem('notificaID', notifica);
-        getLinkNotifica(notifica);
-        
+        getLinkNotifica(notifica);        
     }   
     /*Funzione che riceve le nuove notifiche dal server prese da redis */
-    ns.client.incomingNotifications = function (redisNewNotification) {       
+    ns.client.incomingNotifications = function (redisNewNotification) {
+        if (localStorage.getItem('notificaID') != redisNewNotification[4]){
             checkColor();
             navigator.notification.vibrate(2000);
-            navigator.notification.beep(1);               
+            navigator.notification.beep(1); 
+        }
         globalizerClick();
         for (var x in redisNewNotification) {
             getLinkNotifica(redisNewNotification[x]);
