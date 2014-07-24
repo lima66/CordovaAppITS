@@ -2,12 +2,11 @@
 
 $(function () {
     $.ajax({
-        url: 'http://192.168.102/api/events',
+        url: 'http://192.168.102.2/api/events',
         type: 'GET',
-        datatype: "json",
         success: function (data) {
-            for (var event_obj in data) {
-                var event = new Object();
+        	var event = new Object();
+            for (var event_obj in data) {                
                 event.id = data[event_obj].Id;
                 event.data = data[event_obj].Data;
                 event.titolo = data[event_obj].Titolo;
@@ -37,8 +36,7 @@ $(function () {
             })
 
         }, error: function (data) {
-            $('#BottoneConferma').css('display', 'none');
-            $('#userItemsList').html("Errore nel recupero delle info utente");
+            $('#userItemsList').html("Errore nel recupero delle informazioni");
         }
     });
 });

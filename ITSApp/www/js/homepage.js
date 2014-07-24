@@ -1,24 +1,22 @@
 ﻿var numeroNewsDaMostrareInHomePage = 4; // +1 :)
 var numeroEventiDaMostrareInHomePage = 4; // +1 :)
-var arrow = $(".carousel-control").hide();
-var carousel = $("#carousel-example-generic");
+//var arrow = $(".carousel-control").hide();
+//var carousel = $("#carousel-example-generic");
 
 $(document).ready(function () {
-    carousel.hover(handlerIn, handlerOut);
-    $('.carousel').carousel({
-        interval: 5000
-    });
+    //carousel.hover(handlerIn, handlerOut);
+    //$('.carousel').carousel({
+    //    interval: 5000
+    //});
     lastNews();
-    nextEvents()
+    nextEvents();
 });
-
-function handlerIn() {
-    arrow.show();
-}
-
-function handlerOut() {
-    arrow.hide();
-}
+//function handlerIn() {
+//    arrow.show();
+//}
+//function handlerOut() {
+//    arrow.hide();
+//}
 function lastNews() {
     $.ajax({
         url: 'http://192.168.102.2/api/news/last',
@@ -27,6 +25,7 @@ function lastNews() {
         timeout: 5500,
         success: function (data) {           
             var news = new Object();
+            $('#lastNews').empty();
             for (var i = 0; i <= numeroEventiDaMostrareInHomePage; i++) {
                 news.id = data[i].Id;
                 news.data = data[i].Data;
@@ -48,7 +47,6 @@ function lastNews() {
         }
     });
 }
-
 function nextEvents() {
     $.ajax({
         url: 'http://192.168.102.2/api/events/last',
@@ -57,6 +55,7 @@ function nextEvents() {
         timeout: 5500,
         success: function (data) {         
             var event = new Object();
+            $('#nextEvents').empty();
             for (var i = 0; i <= numeroEventiDaMostrareInHomePage; i++) {
                 event.id = data[i].Id;
                 event.data = data[i].Data;

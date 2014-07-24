@@ -1,21 +1,23 @@
-var msg;
-var wakelocked = false;
 $(document).ready(function () {
     document.addEventListener("deviceready", onDeviceReady.bind(this), false);
 });
     // Cordova is loaded and it is now safe to make calls Cordova methods
 function onDeviceReady() {  
-    document.addEventListener("offline",offline.bind(this), false);
-    document.addEventListener('pause',onPause.bind(this), false);
-    document.addEventListener("backbutton",onBackButton.bind(this), false);
-    document.addEventListener("resume", onResume.bind(this), false);
-    document.addEventListener("online", online.bind(this), false);    
+    document.addEventListener("offline",offline, false);
+    document.addEventListener('pause',onPause, false);
+    document.addEventListener("backbutton",onBackButton, false);
+    document.addEventListener("resume", onResume, false);
+    document.addEventListener("online", online, false);
+    document.addEventListener("menubutton", onMenu, false);
+
+}
+function onMenu() {
+    $(".navbar-toggle").trigger('click');
 }
 function online() {
     getNewsRedisAndConnectToSignalR();
 }
 function onResume() {
-    msg = false;
     window.plugin.backgroundMode.disable();
     getNewsRedisAndConnectToSignalR();
 }
@@ -54,7 +56,7 @@ function appendMessage(id, tipo, titolo) {
     var ul = document.getElementById("globalizeItems");
     var totalLi = ul.children.length;
     if(totalLi <= 4){    
-        $("#globalizeItems").prepend(notification); 
+        $("#globalizeItems").prepend(notification);
     } else {
         var list = document.getElementById("globalizeItems");
         list.removeChild(list.childNodes[4]);
@@ -66,24 +68,26 @@ function checkColor() {
         $(".glyphicon-globe").css("color", "red");
     }
 }
+
 function globalizerClick() {
     $("#globalizer").off();
     $("#globalizer").on("click", function () {
-            $("#globalizeItems").toggle();
-        if ($(".glyphicon-globe").css("color") == "rgb(255, 0, 0)") {
-            $(".glyphicon-globe").css("color", "black");
+    $("#globalizeItems").toggle();
+    if ($(".glyphicon-globe").css("color") == "rgb(255, 0, 0)") {
+        $(".glyphicon-globe").css("color", "black");
         }
     });
 }
 //Si attiva quando premi il tasto back del telefono
 function onBackButton(e) {
+    e.preventDefault();
     if ($("#myModal").css('display') == 'block') {
         $("#myModal").modal('hide');        
         return;
     }
-    if ($('#globalizeItems').css('display') == 'block') {       
-        $("#globalizeItems").trigger('click');
-        $(document).trigger('click');
+    if ($("#globalizeItems").css('display') == 'block') {
+        $("#globalizeItems").toggle();
+        $(".bodyContainer").trigger('click');
         return;
     }
     if (document.title == 'index') {
@@ -96,8 +100,7 @@ function onBackButton(e) {
     }
     else {
         navigator.app.backHistory();
-    }
-    
+    }    
 }
 function AjaxCall(link,id,type) {
     $.ajax({
@@ -106,9 +109,7 @@ function AjaxCall(link,id,type) {
         type: 'get',
         datatype: 'json',
         success: function (notifica) {
-            if (msg) {
-                backgroundMessage(id, type,notifica.Titolo);
-            }
+            backgroundMessage(id, type,notifica.Titolo);
             appendMessage(id, type,notifica.Titolo);
         },
         error: function (data) {
@@ -131,23 +132,24 @@ function getNewsRedisAndConnectToSignalR() {
     ns.client.broadcastNotification = function (notifica) {
         checkColor();
         navigator.notification.vibrate(2000);
-        navigator.notification.beep(1);         
+        navigator.notification.beep(1);     
         globalizerClick();
         localStorage.setItem('notificaID', notifica);
         getLinkNotifica(notifica);        
     }   
     /*Funzione che riceve le nuove notifiche dal server prese da redis */
     ns.client.incomingNotifications = function (redisNewNotification) {
+        alert(redisNewNotification);
         if (localStorage.getItem('notificaID') != redisNewNotification[4]){
             checkColor();
             navigator.notification.vibrate(2000);
-            navigator.notification.beep(1); 
-        }
+            navigator.notification.beep(1);           
+        } 
         globalizerClick();
         for (var x in redisNewNotification) {
             getLinkNotifica(redisNewNotification[x]);
             localStorage.setItem('notificaID', redisNewNotification[x]);
-        }      
+        }
     }
     $.connection.hub.start()
       .done(function () {

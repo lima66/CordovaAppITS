@@ -20,6 +20,8 @@
 package com.its.ITSApp;
 
 import android.os.Bundle;
+import android.view.Menu;
+
 import org.apache.cordova.*;
 
 public class ITSApp extends CordovaActivity 
@@ -33,5 +35,9 @@ public class ITSApp extends CordovaActivity
         super.loadUrl(Config.getStartUrl());
         //super.loadUrl("file:///android_asset/www/index.html");
     }
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) { 
+        return false; 
+    } 
 }
 

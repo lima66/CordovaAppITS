@@ -71,19 +71,10 @@
             });
             $(".bodyContainer").on("click", function () {
                 if ($('#globalizeItems').css('display') == 'block') {
-                    $("#globalizeItems").trigger('click');
-                    $(document).trigger('click');                    
+                    $("#globalizeItems").trigger('click');                                   
                 }
             });
-            $("#globalizer").on("click", function () {              
-                $("#globalizeItems").trigger('click');
-                if ($('#globalizeItems').css('display') == 'block') {                   
-                    $(document).trigger('click');
-                }
-                if ($(".glyphicon-globe").css("color") == "rgb(255, 0, 0)") {
-                    $(".glyphicon-globe").css("color", "black");
-                }
-            });            
+            globalizerClick();
         },
         error: function (data, t, m) {
             if (t === "timeout") {

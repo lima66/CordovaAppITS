@@ -77,6 +77,13 @@ module.exports = [
         "clobbers": [
             "window.powerManagement"
         ]
+    },
+    {
+        "file": "plugins/de.appplant.cordova.plugin.email-composer/www/email_composer.js",
+        "id": "de.appplant.cordova.plugin.email-composer.EmailComposer",
+        "clobbers": [
+            "plugin.email"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -90,7 +97,8 @@ module.exports.metadata =
     "org.apache.cordova.network-information": "0.2.11-dev",
     "org.apache.cordova.vibration": "0.3.10-dev",
     "com.ohh2ahh.plugins.appavailability": "0.3.0",
-    "org.apache.cordova.plugin.power-management": "0.1.0"
+    "org.apache.cordova.plugin.power-management": "0.1.0",
+    "de.appplant.cordova.plugin.email-composer": "0.8.2dev"
 }
 // BOTTOM OF METADATA
 });

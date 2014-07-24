@@ -910,8 +910,8 @@ window.addEventListener('load', function() {
     var hsize = document.getElementById("height_size");
     //var bsize = document.getElementById("both_size");
     //bsize.addEventListener('mousedown', initDragBoth, false);
-    wsize.addEventListener('mousedown', initDragWidth, false);
-    hsize.addEventListener('mousedown', initDragHeight, false);
+    //wsize.addEventListener('mousedown', initDragWidth, false);
+    //hsize.addEventListener('mousedown', initDragHeight, false);
 });
 
 var startWidth = 0;

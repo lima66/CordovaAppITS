@@ -3,17 +3,15 @@
 $(function () {
     $.ajax({
         url: 'http://192.168.102.2/api/news',
-        type: 'GET',
-        datatype: "json",
+        type: 'GET',   
         success: function (data) {
-            for (var news_obj in data) {
-                var news = new Object();
+        	var news = new Object();
+            for (var news_obj in data) {                
                 news.id = data[news_obj].Id;
                 news.data = data[news_obj].Data;
                 news.titolo = data[news_obj].Titolo;
                 news.testo = data[news_obj].Testo;
                 news.foto = data[news_obj].Foto;
-
                 var newsCell = '<div class="newsCell" data-newsID="' + news.id + '">'
                                     + '<div class="row dataNews">'
                                         + '<div class="col-md-12 divDateCell"><span class="dateNewsCell">' + news.data + '</span></div>'
