@@ -6,22 +6,17 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/Site.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script src="js/footer.js"></script>
     <title>ITSApp</title>
 </head>
-<body>
+<body onload="connectionHub()">
     <div id="menubar"></div>
     <!--FineMenu-->
     <div class="container bodyContainer">
         <h2>Forum</h2>
         <p>Work in progress</p>
-    </div>
-    <!--Footer-->
-    <div class="modal-footer">
-        <div class="container">
-            <div class="col-xs-4"><p class="home testo">Home</p></div>
-            <div class="col-xs-4"><p id="contatti" class="testo">Contatti</p></div>
-            <div class="col-xs-4"><p class="channelYoutube testo">Video</p></div>
-        </div>
     </div>
     <!--Javscript-->
     <script type="text/javascript" src="cordova.js"></script>
@@ -31,6 +26,7 @@
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/jquery.signalR-2.0.3.min.js"></script>
     <script type="text/javascript" src="http://192.168.102.2/signalR/hubs"></script>
+    <script src="js/connessioneHUB.js"></script>
 </body>
 </html>
 

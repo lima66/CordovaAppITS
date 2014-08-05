@@ -14,7 +14,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <div class="navbar-brand hidden-md hidden-lg hidden-sm" style="padding:8px 0;">
+            <div class="navbar-brand hidden-md hidden-lg hidden-sm" id="navigator">
                 <div class="btn btn-default dropdown open" id="globalizer">
                     <span class="glyphicon glyphicon-globe"></span>
                     <ul class="dropdown-menu" id="globalizeItems" style="display:none;">
@@ -30,8 +30,8 @@
                 <div class="btn btn-default socialIcon" id="SocialFacebook">
                     <img src="images/facebook.gif" />
                 </div>
-                <div class="btn btn-default" style="height:32px;" id="floorplan">
-                    <img style="width:36px;padding-bottom:5px;" src="images/floorplan_icon.png" />
+                <div class="btn btn-default" id="floorplan">
+                    <img style="width:20px;height:auto;margin-top:-2px;" src="images/mappa.gif" />
                 </div>
             </div>
             <!--@*<a class="navbar-brand" href="#">Brand</a>*@-->
@@ -43,14 +43,8 @@
                 <li><a href="Consorzio.html">Il Consorzio</a></li>
                 <li><a href="Universita.html">Università</a></li>
                 <li><a href="Quadroaule.html">Quadro Aule</a></li>
-                <li style="display:none;"><a href="Profilo.html">Profilo</a></li>
-                <li class="dropdown" style="background:#fff;">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">News ed Eventi</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="News.html">->News</a></li>
-                        <li><a href="Events.html">->Eventi</a></li>
-                    </ul>
-                </li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Events.html">Eventi</a></li>               
             </ul>
             <div class="navbar-right hidden-xs" style="padding:8px 0;">
                 <div class="btn btn-default dropdown open" id="globalizer">
@@ -76,12 +70,22 @@
 <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content" style="padding: 10px;">
-            <form role="search">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="searchInput" placeholder="cerca news e eventi">
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Cerca nel sito</h3>
                 </div>
-                <button type="button" class="btn btn-default cerca">Invia</button>
-            </form>
+                <div class="panel-body">
+                    <form role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="searchInput" placeholder="cerca news e eventi">
+                        </div>
+                        <button type="button" class="btn btn-lg btn-primary cerca">Cerca</button>
+                    </form>
+                </div>
+            </div>
+
+            
         </div>
     </div>
 </div>

@@ -35,9 +35,11 @@
                         {
                             "xml": "<feature name=\"AppAvailability\"><param name=\"android-package\" value=\"com.ohh2ahh.appavailability.AppAvailability\" /></feature>",
                             "count": 1
-                        },
+                        }
+                    ],
+                    "/widget": [
                         {
-                            "xml": "<feature name=\"EmailComposer\"><param name=\"android-package\" value=\"de.appplant.cordova.plugin.emailcomposer.EmailComposer\" /></feature>",
+                            "xml": "<feature name=\"ChromeStorage\"><param name=\"android-package\" value=\"org.chromium.ChromeStorage\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -66,10 +68,6 @@
                         },
                         {
                             "xml": "<activity android:launchMode=\"singleInstance\" android:name=\"de.appplant.cordova.plugin.localnotification.ReceiverActivity\" />",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<provider android:authorities=\"com.its.ITSApp.plugin.emailcomposer.attachmentprovider\" android:name=\"de.appplant.cordova.plugin.emailcomposer.AttachmentProvider\"></provider>",
                             "count": 1
                         }
                     ],
@@ -125,9 +123,13 @@
         "org.apache.cordova.plugin.power-management": {
             "PACKAGE_NAME": "com.its.ITSApp"
         },
-        "de.appplant.cordova.plugin.email-composer": {
+        "org.chromium.storage": {
             "PACKAGE_NAME": "com.its.ITSApp"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "org.chromium.common": {
+            "PACKAGE_NAME": "com.its.ITSApp"
+        }
+    }
 }

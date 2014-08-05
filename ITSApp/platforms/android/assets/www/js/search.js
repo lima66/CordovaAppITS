@@ -1,5 +1,4 @@
 ﻿var queryString = new Array();
-
 $(function () {
     if (queryString.length == 0) {
         if (window.location.search.split('?').length > 1) {
@@ -18,7 +17,6 @@ $(function () {
 var events = $(".events");
 var news = $(".news");
 function popolaPaginaDettaglio(keyword) {
-    alert(keyword);
     $.ajax({
         url: 'http://192.168.102.2/search/' + keyword,
         type: 'GET',

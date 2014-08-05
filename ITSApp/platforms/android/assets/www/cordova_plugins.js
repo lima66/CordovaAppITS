@@ -79,11 +79,30 @@ module.exports = [
         ]
     },
     {
-        "file": "plugins/de.appplant.cordova.plugin.email-composer/www/email_composer.js",
-        "id": "de.appplant.cordova.plugin.email-composer.EmailComposer",
+        "file": "plugins/org.chromium.storage/storage.js",
+        "id": "org.chromium.storage.Storage",
         "clobbers": [
-            "plugin.email"
+            "chrome.storage"
         ]
+    },
+    {
+        "file": "plugins/org.chromium.common/events.js",
+        "id": "org.chromium.common.events",
+        "clobbers": [
+            "chrome.Event"
+        ]
+    },
+    {
+        "file": "plugins/org.chromium.common/errors.js",
+        "id": "org.chromium.common.errors"
+    },
+    {
+        "file": "plugins/org.chromium.common/stubs.js",
+        "id": "org.chromium.common.stubs"
+    },
+    {
+        "file": "plugins/org.chromium.common/helpers.js",
+        "id": "org.chromium.common.helpers"
     }
 ];
 module.exports.metadata = 
@@ -98,7 +117,8 @@ module.exports.metadata =
     "org.apache.cordova.vibration": "0.3.10-dev",
     "com.ohh2ahh.plugins.appavailability": "0.3.0",
     "org.apache.cordova.plugin.power-management": "0.1.0",
-    "de.appplant.cordova.plugin.email-composer": "0.8.2dev"
+    "org.chromium.storage": "1.0.1",
+    "org.chromium.common": "1.0.1"
 }
 // BOTTOM OF METADATA
 });

@@ -134,3 +134,8 @@ table#timetable td.selectArea {
    margin-top: 2%;
    width:100%;
 }
+.tab-content{
+    zoom:70%;
+     -moz-transform: scale(0.7);
+     -webkit-transform:scale(0.7);
+}

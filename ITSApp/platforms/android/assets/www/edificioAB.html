@@ -7,70 +7,56 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/Site.css" rel="stylesheet" />
     <link href="css/mappa.css" rel="stylesheet" /> 
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script src="js/footer.js"></script>
     <title>ITSApp</title>
 </head>
-<body>
+<body onload="connectionHub()">
     <div id="menubar"></div>
     <!--FineMenu-->
     <div class="container bodyContainer" >
         <div class="row">
-            <div class="col-xs-12">
+            <div class="col-xs-12" >
                 <br />
-               	<br />
                 <ul class="nav nav-tabs" id="myTab">
                     <li class="active"><a href="#pianoInterrato">-1P</a></li>
                     <li><a href="#pianoTerra">PT</a></li>
                     <li><a href="#primoPiano">1P</a></li>
                     <li><a href="#secondoPiano">2P</a></li>
                 </ul>
-                <div class="tab-content" id="wrapper" style=" overflow:hidden ;">
+                <div class="tab-content" style="overflow:hidden;">
                     <div id="pianoInterrato" class="tab-pane fade in active">
-                        <br />
-                        <div class="col-md-12">
-                            <img src="images/EdificioA/pianoInterratoEdA.jpg" class="img-responsive" />
-                        </div>
+                        <img src="images/EdificioA/pianoInterratoEdA.jpg" class="img-responsive" />
                     </div>
                     <div id="pianoTerra" class="tab-pane fade">
-                        <br />
-                        <div class="col-md-12">
-                            <img src="images/EdificioA/pianoTerraEdA.jpg" class="img-responsive" />
-                        </div>
+                        <img src="images/EdificioA/pianoTerraEdA.jpg" class="img-responsive" />
+
                     </div>
                     <div id="primoPiano" class="tab-pane fade">
-                        <br />
-                        <div class="col-md-12">
-                            <img src="images/EdificioA/primoPianoEdA.jpg" class="img-responsive" />
-                        </div>
+
+                        <img src="images/EdificioA/primoPianoEdA.jpg" class="img-responsive" />
+
                     </div>
                     <div id="secondoPiano" class="tab-pane fade">
-                        <br />
-                        <div class="col-md-12">
-                            <img src="images/EdificioA/secondoPianoEdA.jpg" class="img-responsive" />
-                        </div>
+
+                        <img src="images/EdificioA/secondoPianoEdA.jpg" class="img-responsive" />
+
                     </div>
                 </div>
             </div>
         </div>
         <br />
     </div>
-    <!--Footer-->
-    <div class="modal-footer">
-        <div class="container">
-            <div class="col-xs-4"><p class="home testo">Home</p></div>
-            <div class="col-xs-4"><p id="contatti" class="testo">Contatti</p></div>
-            <div class="col-xs-4"><p class="channelYoutube testo">Video</p></div>
-        </div>
-    </div>
     <!--Javscript-->
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/menu.js"></script>
-    <script type="text/javascript" src="js/tab.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/iscroll-zoom.js"></script>
-    <script type="text/javascript" src="js/Zoom.js"></script>
     <script type="text/javascript" src="js/jquery.signalR-2.0.3.min.js"></script>
-    <script type="text/javascript" src="http://192.168.102.2/signalR/hubs"></script>
+    <script type="text/javascript" src="js/call_signalr.js"></script>      
+    <script type="text/javascript" src="js/iscroll-zoom.js"></script>
+    <script type="text/javascript" src="js/Zoom.js"></script> 
+    <script src="js/tab.js"></script>     
+    <script src="js/connessioneHUB.js"></script>
 </body>
 </html>

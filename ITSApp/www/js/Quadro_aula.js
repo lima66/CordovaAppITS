@@ -38,8 +38,7 @@ function calendario(giorno, mese, anno, area) {
             } else {
                 index = 0;
                 area = 4;
-            }
-            
+            }            
         },
         error: function (data, t, m) {
             if (t === "timeout") {

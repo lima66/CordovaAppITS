@@ -6,6 +6,9 @@
     <meta name=viewport content="width=device-width, initial-scale=1">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/Site.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/menu.js"></script>
+    <script src="js/footer.js"></script>
     <title>index</title>
 </head>
 <body>
@@ -43,18 +46,32 @@
                         </a>
                     </div>
                 </div>-->
-                <div class="row">
+                <div class="row" style="margin-top:30px;">
                     <div class="col-md-6">
-                        <h2 class="pageTitle">Last News</h2>
-                        <ul id="lastNews" style="padding-bottom: 10px; border-bottom: 2px dotted black; margin-bottom: 20px;">
-                            <!--@*ultime cinque news inserite dinamicamnte*@-->
-                        </ul>
+                        <div class="homeArticleContainer" style="width:100%;
+                    border-bottom-left-radius:10px;
+                    border-top-right-radius:10px;
+                    border:2px solid #428bca;
+                    margin-bottom:20px;">
+                            <h4 style="margin-left:10px;"><span class="glyphicon glyphicon-play"></span> Last News</h4>
+                            <ul class="list-group"  id="lastNews">
+                                <!--@*ultime cinque news inserite dinamicamnte*@-->
+                            </ul>
+                        </div>
                     </div>
                     <div class="col-md-6">
-                        <h2 class="pageTitle">Next Events</h2>
-                        <ul id="nextEvents" style="padding-bottom: 10px; border-bottom: 2px dotted black; margin-bottom: 20px;">
-                            <!--@*ultimi cinque eventi inserite dinamicamnte*@-->
-                        </ul>
+
+                        <div class="homeArticleContainer"
+                              style="width:100%;
+                    border-bottom-left-radius:10px;
+                    border-top-right-radius:10px;
+                    border:2px solid #428bca;
+                    margin-bottom:20px;">
+                            <h4 style="margin-left:10px;"><span class="glyphicon glyphicon-play"></span> Next Events</h4>
+                            <ul class="list-group" id="nextEvents">
+                                <!--@*ultimi cinque eventi inserite dinamicamnte*@-->
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,17 +79,11 @@
                 <!--@*VISUALIZZA QUADRO ORE*@-->
                 <a href="Quadroaule.html">
                     <div style="width:100%;
-                    height:180px;
                     border-bottom-left-radius:10px;
                     border-top-right-radius:10px;
                     border:2px solid #428bca;
                     margin-bottom:20px;">
-                        <div style="border-bottom: 2px solid #428bca; color: #428bca;">
-                            <h4 style="margin-left:10px;"><span class="glyphicon glyphicon-time"></span> Visualizza il quadro ore</h4>
-                        </div>
-                        <div id="orario">
-                            <img src="images/101orario-lezioni.jpg" style="height:108px; width:100%;max-width:300px; display: block;margin-left: auto;margin-right: auto;" />
-                        </div>
+                        <h4 style="margin-left:10px;"><span class="glyphicon glyphicon-time"></span> Visualizza il quadro ore</h4>
                     </div>
                 </a>
                 <!--LOGIN FORM-->
@@ -103,28 +114,20 @@
                                 <input type="email" class="form-control" id="newsletterInputEmail" placeholder="Enter email">
                             </div>
                             <button class="btn btn-default" id="submitNewsletterEmail">Submit</button>
+                            <p id="response" style="color:#428bca; margin-top:5px;"></p>
                         </form>
                     </div>
                 </div>
+                <br />
             </div>
         </div>
     </div>
-    <!--Footer-->
-    <div class="modal-footer">
-        <div class="container">
-            <div class="col-xs-4"><p class="home testo">Home</p></div>
-            <div class="col-xs-4"><p id="contatti" class="testo">Contatti</p></div>
-            <div class="col-xs-4"><p class="channelYoutube testo">Video</p></div>
-        </div>
-    </div>
     <!--Javscript-->
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>   
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/menu.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript" src="js/homepage.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>    
     <script type="text/javascript" src="js/jquery.signalR-2.0.3.min.js"></script>
-    <script type="text/javascript" src="http://192.168.102.2/signalR/hubs"></script>
+    <script src="js/call_signalr.js"></script>
 </body>
 </html>
